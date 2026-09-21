@@ -1,13 +1,24 @@
-# References folder
+# References folder policy
 
-Simpan PDF jurnal/artikel yang benar-benar digunakan untuk skripsi di folder ini pada proyek skripsi pengguna, bukan otomatis di bundle skill publik.
+Folder `references/` di **proyek skripsi pengguna** adalah tempat PDF jurnal/artikel yang benar-benar dipakai. Jangan mencampurnya dengan referensi umum di folder skill.
 
-Untuk setiap PDF, catat minimal:
+## Per-PDF provenance
 
-- nama file;
+Catat:
+
+- filename;
 - judul, penulis, tahun, DOI/URL jika tersedia;
-- bagian skripsi yang menggunakannya;
-- status akses/lisensi;
-- status ekstraksi dan validasi.
+- bab/subbab yang menggunakan sumber;
+- claim ID yang didukung;
+- lisensi/status akses;
+- text layer/OCR status;
+- tanggal validasi;
+- status: verified/partial/unverified.
 
-Jangan memasukkan PDF berhak cipta, skripsi, data, identitas mahasiswa, atau komentar pembimbing ke repositori publik. Jika skill dibagikan, distribusikan hanya aturan umum dan metadata sumber yang boleh dibagikan.
+## Privacy
+
+Jangan memasukkan DOCX skripsi, PDF berhak cipta, skripsi contoh, data penelitian, identitas, komentar pembimbing, audit, atau proposal pengguna ke repo skill publik. `.gitignore` root skill mengecualikan tipe file umum, tetapi periksa `git status` sebelum commit; ignore bukan pengganti audit.
+
+## Public skill repository
+
+Repo publik hanya berisi instruksi umum, referensi tautan yang boleh dibagikan, ringkasan aturan, template kosong, dan dokumentasi. PDF EYD atau PDF jurnal tidak perlu disalin jika tautan sumber sudah cukup dan lisensinya tidak mengizinkan redistribusi.

@@ -1,10 +1,12 @@
-# EYD Edisi Kelima — referensi kerja
+# EYD Edisi Kelima dan Struktur Kalimat
 
-Sumber: https://eyd.netlify.app/
+## Source
 
-EYD Edisi Kelima digunakan sebagai rujukan kerja untuk huruf, kata, tanda baca, dan unsur serapan. Konten situs menyatakan lisensi CC BY-SA 4.0. Skill ini tidak menyalin seluruh isi situs; gunakan tautan sumber untuk rincian aturan dan catat tanggal pemeriksaan jika diperlukan.
+Rujukan utama: https://eyd.netlify.app/ — *Ejaan Bahasa Indonesia yang Disempurnakan (Edisi Kelima)*. Gunakan halaman sumber untuk aturan terbaru dan deep link yang relevan. EYD mengatur ejaan, penggunaan huruf, penulisan kata, unsur serapan, dan tanda baca; EYD bukan bukti tunggal untuk metodologi, validitas statistik, atau seluruh keputusan sintaksis.
 
-## Halaman rujukan
+Konten situs menyatakan lisensi CC BY-SA 4.0. Skill ini merujuk dan merangkum aturan kerja; tidak menyalin seluruh situs.
+
+## Rujukan halaman
 
 - Beranda: https://eyd.netlify.app/
 - Huruf miring: https://eyd.netlify.app/penggunaan-huruf/huruf-miring
@@ -17,31 +19,39 @@ EYD Edisi Kelima digunakan sebagai rujukan kerja untuk huruf, kata, tanda baca, 
 - Serapan umum: https://eyd.netlify.app/penulisan-unsur-serapan/serapan-umum
 - Serapan khusus: https://eyd.netlify.app/penulisan-unsur-serapan/serapan-khusus
 
-## Audit kalimat
+## Sentence audit
 
-EYD tidak sendirian menentukan metodologi atau seluruh sintaksis. Audit struktur kalimat secara terpisah dengan memeriksa:
+Untuk setiap kalimat yang diedit, tulis diagnosis ringkas:
 
-1. Subjek: siapa atau apa yang dibicarakan.
-2. Predikat: tindakan, keadaan, atau hubungan.
-3. Objek/pelengkap jika predikat memerlukannya.
-4. Keterangan: waktu, tempat, cara, tujuan, sebab, atau batasan.
-5. Konjungsi dan hubungan logis.
-6. Kehematan: hapus pengulangan dan pleonasme.
-7. Kepaduan: satu gagasan utama dan hubungan klausa jelas.
-8. Kepanjangan: pecah kalimat jika terlalu banyak klausa.
-9. Tanda baca sesuai halaman EYD yang relevan.
-10. Makna ilmiah tetap sama.
+| Unsur | Pertanyaan |
+|---|---|
+| Subjek | Siapa atau apa yang dibicarakan? |
+| Predikat | Tindakan, keadaan, atau hubungan apa yang dinyatakan? |
+| Objek/pelengkap | Apakah predikat membutuhkannya? |
+| Keterangan | Kapan, di mana, bagaimana, untuk apa, mengapa, atau dalam batas apa? |
+| Konjungsi | Apakah hubungan antarklausa benar-benar sebab, syarat, tujuan, urutan, atau perbandingan? |
+| Rujukan | Apakah kata ganti dan istilah merujuk secara jelas? |
+| Tanda baca | Apakah tanda baca mengikuti konteks dan aturan EYD? |
+| Makna | Apakah variabel, angka, kondisi, batasan, dan tingkat kepastian tetap? |
 
-Pola diagnosis awal: `Subjek + Predikat + Objek/Pelengkap + Keterangan`. Pola ini bukan rumus wajib. Kalimat pasif boleh digunakan jika fokus ilmiah memang pada objek atau proses.
+Pola `Subjek + Predikat + Objek/Pelengkap + Keterangan` adalah diagnosis awal, bukan rumus wajib. Kalimat pasif tetap benar bila fokus ilmiah berada pada objek atau proses.
 
-Contoh:
+## Example
 
-- Kurang jelas: `Dilakukan pengujian pada sistem menggunakan data uji.`
-- Lebih jelas: `Peneliti melakukan pengujian sistem menggunakan data uji.`
-- Fokus pada sistem: `Sistem diuji menggunakan data uji.`
+Kurang jelas:
 
-Pilih berdasarkan makna yang dimaksud, bukan perubahan mekanis.
+> Dilakukan pengujian pada sistem menggunakan data uji.
 
-## Konflik aturan
+Kemungkinan perbaikan:
 
-Jika EYD, template UNDIP, gaya sitasi, dan arahan pembimbing berbeda: catat konflik, jangan memilih diam-diam, minta keputusan pengguna/pembimbing, dan simpan sumber keputusan dalam audit/proposal.
+> Peneliti melakukan pengujian sistem menggunakan data uji.
+
+atau, jika fokusnya sistem:
+
+> Sistem diuji menggunakan data uji.
+
+Pilih berdasarkan makna yang dimaksud, bukan preferensi aktif/pasif.
+
+## Conflict handling
+
+Jika EYD, template UNDIP, gaya sitasi, dan arahan pembimbing berbeda, catat sumber yang konflik, jangan memilih diam-diam, lalu minta keputusan. Simpan keputusan di audit/proposal.

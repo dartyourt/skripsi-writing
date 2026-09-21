@@ -1,237 +1,242 @@
 ---
 name: skripsi-writing
-description: Audit and revise UNDIP Informatics thesis DOCX safely.
-version: 0.2.0
+description: Audit and revise UNDIP thesis DOCX safely.
+version: 0.3.0
 author: Julius Tegar, Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [skripsi, undip, informatika, docx, audit, sitasi]
+    tags: [skripsi, undip, informatika, docx, academic-writing, eyd, citation-audit]
     related_skills: [docx, pdf, ai-expert-team]
 ---
 
 # Skripsi Writing — UNDIP Informatika
 
-Gunakan skill ini untuk mengaudit, menulis, dan merevisi skripsi S1 Informatika Universitas Diponegoro dalam format `.docx`. Skill ini memisahkan audit, proposal perubahan, persetujuan pengguna, edit, dan verifikasi. Skill tidak menggantikan pembimbing, penguji, pedoman resmi terbaru, atau validasi ilmiah.
+## Overview
+
+Skill ini membantu menulis, mengaudit, dan merevisi skripsi S1 Informatika Universitas Diponegoro dalam format Microsoft Word `.docx`. Fokusnya bukan menghasilkan tulisan yang terdengar ilmiah, tetapi menjaga tiga hal sekaligus: bahasa Indonesia yang jelas menurut EYD Edisi Kelima, argumen yang sesuai dengan bukti penelitian, dan struktur/format DOCX yang tidak rusak.
+
+Skill ini bekerja dengan pola **inspect → audit → propose → approve → edit → verify**. Audit dan proposal selalu menghasilkan Markdown terlebih dahulu. File Word tidak boleh diubah sebelum pengguna menyetujui proposal yang spesifik. Skill tidak menggantikan pembimbing, penguji, pedoman UNDIP terbaru, pemeriksaan plagiarisme, atau validasi metodologi oleh peneliti.
+
+Baca referensi hanya saat relevan:
+
+- aturan penulisan dan struktur paragraf: `references/writing-rules.md`;
+- EYD dan struktur kalimat: `references/eyd-edisi-kelima.md`;
+- sitasi dan PDF sumber: `references/citation-and-source-audit.md`;
+- istilah asing dan *italic*: `references/foreign-terms-and-italic.md`;
+- kalibrasi klaim Bab IV–V: `references/claim-calibration.md`;
+- aturan template UNDIP Informatika: `references/undip-informatika-template.md`;
+- preservasi dan verifikasi DOCX: `references/docx-preservation.md`;
+- eskalasi masalah kompleks: `references/ai-expert-team-protocol.md`.
 
 ## When to Use
 
-Gunakan ketika pengguna meminta:
+Gunakan skill ini ketika pengguna meminta:
 
-- audit bahasa, struktur, sitasi, klaim, atau format skripsi `.docx`;
-- revisi bertahap pada naskah Word dengan format template UNDIP Informatika;
-- validasi sitasi berdasarkan PDF jurnal/artikel di folder `references/`;
-- penulisan atau penyuntingan Bab I–V dengan bahasa Indonesia akademik yang jelas;
-- pemeriksaan istilah teknis, italic, tabel, gambar, persamaan, source code, daftar isi, atau daftar pustaka;
-- bantuan menyelesaikan konflik pedoman atau masalah metodologis yang kompleks.
+- menulis bagian skripsi dari kerangka, catatan, data, metode, atau hasil yang diberikan;
+- memperbaiki ejaan, tata bahasa, struktur kalimat, diksi, kepaduan, dan alur paragraf;
+- mengaudit skripsi `.docx` sebelum perubahan apa pun;
+- memvalidasi sitasi menggunakan PDF jurnal/artikel di folder referensi;
+- meninjau istilah teknis Informatika, nama metode, nama model, singkatan, dan penggunaan *italic*;
+- mengaudit klaim dan generalisasi pada Bab IV dan Bab V;
+- memperbaiki DOCX dengan mempertahankan style, numbering, tabel, gambar, caption, field, dan layout;
+- menyelesaikan konflik pedoman, sitasi, metodologi, atau perubahan DOCX berisiko tinggi.
 
-Jangan gunakan skill ini untuk mengedit `.doc` lama, mengarang data/hasil penelitian/sitasi, atau menerbitkan naskah dan sumber pengguna ke publik.
+Jangan gunakan alur edit DOCX untuk file `.doc` lama. Jangan mengarang data, hasil, sumber, DOI, nomor halaman, metadata PDF, atau kesimpulan penelitian. Jangan memakai aturan ini untuk menyimpulkan bahwa skripsi benar secara metodologis hanya karena bahasanya sudah rapi.
 
-## Prerequisites
+## Scope and Authority
 
-Sebelum bekerja, minta atau temukan:
+Urutan otoritas ketika aturan berbeda:
 
-- satu file skripsi `.docx` sumber;
-- folder kerja skripsi yang memuat `references/` untuk PDF jurnal/artikel yang benar-benar digunakan;
-- bab/subbab dan tujuan pekerjaan bila audit tidak mencakup seluruh dokumen;
-- data, metode, hasil, dan keputusan pengguna yang menjadi dasar Bab III–V;
-- pedoman/template UNDIP Informatika yang berlaku. Gunakan `references/undip-informatika-2024.md` sebagai ringkasan kerja, bukan pengganti dokumen resmi terbaru.
-- pedoman EYD Edisi Kelima dari https://eyd.netlify.app/. Gunakan `references/eyd-edisi-kelima.md` untuk halaman rujukan.
+1. arahan pembimbing/penguji yang terdokumentasi dan pedoman resmi UNDIP yang berlaku;
+2. template UNDIP yang disediakan pengguna, dengan versi dan tanggal dicatat;
+3. EYD Edisi Kelima untuk ejaan, huruf, kata, dan tanda baca;
+4. gaya sitasi yang disepakati;
+5. referensi kerja skill ini.
 
-Jika PDF tidak ada, tidak terbaca, atau hanya berupa scan tanpa OCR, tandai sitasi sebagai `BELUM TERVERIFIKASI`; jangan menebak metadata atau isi sumber.
+Jika dua sumber bertentangan, jangan memilih diam-diam. Catat konflik dalam audit, tunjukkan sumber yang dibandingkan, tandai dampaknya, dan minta keputusan pengguna atau pembimbing.
 
-## EYD Edisi Kelima dan Struktur Kalimat
+## Required Inputs
 
-Gunakan https://eyd.netlify.app/ untuk huruf, kata, tanda baca, dan unsur serapan. EYD mengatur ejaan dan tanda baca; jangan mengklaim EYD sendirian membuktikan kebenaran metodologi atau seluruh sintaksis.
+Sebelum audit atau penulisan, identifikasi:
 
-Untuk setiap kalimat, periksa subjek, predikat, objek/pelengkap, keterangan, hubungan logis, kehematan, kepaduan, panjang kalimat, tanda baca, dan pelestarian makna ilmiah. Gunakan pola diagnosis awal `Subjek + Predikat + Objek/Pelengkap + Keterangan`, bukan rumus wajib. Kalimat pasif boleh jika fokus ilmiah memang pada objek atau proses.
+- file DOCX sumber dan apakah pengguna mengizinkan audit seluruh dokumen atau hanya bab tertentu;
+- folder `references/` proyek yang berisi PDF jurnal/artikel yang benar-benar dipakai;
+- bab, subbab, tujuan, dan jenis pekerjaan;
+- data, metode, instrumen, sampel, hasil, tabel, gambar, dan batasan penelitian untuk Bab III–V;
+- template/pedoman UNDIP yang dipakai dan tanggal versinya;
+- gaya sitasi yang digunakan;
+- bagian yang tidak boleh disentuh, bila ada.
 
-Contoh audit:
+Jika konteks penting tidak tersedia, lanjutkan hanya pada audit yang dapat dibuktikan dan tandai hal lain `PERLU INFORMASI`. Jangan mengisi kekosongan dengan pengetahuan umum yang tampak masuk akal.
 
-- Kurang jelas: `Dilakukan pengujian pada sistem menggunakan data uji.`
-- Lebih jelas: `Peneliti melakukan pengujian sistem menggunakan data uji.`
-- Jika fokus pada sistem: `Sistem diuji menggunakan data uji.`
+## Non-Negotiable Rules
 
-Pilih versi berdasarkan makna yang dimaksud. Jangan memiringkan semua istilah Inggris otomatis: istilah asing umum yang belum terserap dapat dimiringkan, sedangkan nama metode, model, arsitektur, framework, software, merek, singkatan, dan kepanjangan teknis dalam kurung umumnya tidak otomatis dimiringkan. Jika EYD, template UNDIP, gaya sitasi, dan arahan pembimbing berbeda, catat konflik dan minta keputusan.
+1. **Audit sebelum edit.** Audit bersifat read-only terhadap DOCX sumber.
+2. **Proposal sebelum perubahan.** Setiap perubahan harus memiliki ID audit dan proposal Markdown.
+3. **Approval eksplisit.** Persetujuan harus merujuk file/versi proposal dan item yang disetujui. “Lanjutkan” tanpa proposal yang terlihat tidak cukup.
+4. **Scope terbatas.** Terapkan hanya item yang disetujui; jangan melakukan perbaikan massal yang tidak terdaftar.
+5. **Source immutable.** Default selalu menghasilkan DOCX baru, bukan menimpa file sumber.
+6. **Evidence first.** Klaim dari PDF, data, atau pedoman harus dapat ditelusuri ke sumbernya.
+7. **No silent strengthening.** Perbaikan bahasa tidak boleh menaikkan kepastian, memperluas populasi, atau mengubah hubungan korelasi menjadi sebab-akibat.
+8. **No raw XML editing.** Gunakan kemampuan DOCX yang sesuai; jangan melakukan substitusi string pada ZIP/XML DOCX secara sembarangan.
+9. **No publication by default.** Jangan commit, push, upload, atau publish dokumen pengguna, PDF referensi, data, atau identitas mahasiswa.
+10. **Uncertainty is a result.** Gunakan `PASS`, `PARTIAL`, `FAIL`, `BELUM TERVERIFIKASI`, atau `PERLU KEPUTUSAN` bila bukti tidak cukup.
 
-Jika PDF tidak ada, tidak terbaca, atau hanya berupa scan tanpa OCR, tandai sitasi sebagai `BELUM TERVERIFIKASI`; jangan menebak metadata atau isi sumber.
+## Operating Modes
 
-## Non-negotiable Safety and Approval Rules
+### Mode A — Writing from supplied material
 
-1. **Audit dahulu.** Audit tidak boleh mengubah DOCX.
-2. **Proposal dahulu.** Setiap perubahan ditulis dalam Markdown sebelum edit, dengan lokasi, teks/masalah, usulan, alasan, sumber aturan, dampak, dan risiko.
-3. **Persetujuan eksplisit.** Jangan mengubah DOCX sebelum pengguna menyetujui proposal tertentu. Persetujuan umum tanpa proposal yang terlihat tidak cukup.
-4. **Satu perubahan atau batch kecil.** Kerjakan item proposal satu per satu atau dalam batch kecil yang disetujui; jangan melakukan rewrite menyeluruh secara diam-diam.
-5. **Jangan menimpa sumber.** Default output adalah file baru, misalnya `skripsi-revised-01.docx`.
-6. **Tidak ada publikasi otomatis.** Jangan commit, push, upload, atau publish tanpa persetujuan terpisah dan eksplisit.
-7. **Jaga provenance.** Naskah, identitas mahasiswa, data penelitian, komentar pembimbing, dan PDF berhak cipta tetap berada di folder kerja privat.
+Gunakan ketika pengguna memberi kerangka atau bahan teks, bukan meminta perubahan DOCX. Tetapkan bab dan subbab, rumuskan ide pokok, susun paragraf, periksa EYD, struktur kalimat, istilah teknis, sitasi, dan tingkat klaim. Tampilkan hasil dengan format output yang sesuai; jangan menambahkan fakta yang tidak ada di bahan.
 
-## Workflow
+### Mode B — Read-only DOCX audit
 
-### 1. Inventaris dan baseline
+Inventaris DOCX, baca struktur dan isi, periksa aturan bahasa/sumber/format, lalu buat laporan audit Markdown. Jangan membuat salinan hasil edit atau menyimpan perubahan pada DOCX.
 
-Catat nama file, ukuran, versi, tanggal audit, dan file yang akan disentuh. Periksa apakah DOCX dapat dibuka sebagai paket Word yang sehat. Baca struktur sebelum isi: bagian, heading, paragraf, tabel, gambar, caption, daftar, header/footer, style, komentar, dan tracked changes.
+### Mode C — Proposal revision
 
-Gunakan kemampuan `docx` skill yang tersedia. Jangan mengedit XML mentah atau menggunakan substitusi teks pada file `.docx`. Jika alat DOCX tidak tersedia, berhenti pada audit atau laporkan keterbatasan; jangan membuat file Word palsu.
+Ubah temuan audit menjadi proposal yang dapat disetujui satu per satu atau per batch kecil. Proposal harus menampilkan sebelum/sesudah, alasan, bukti, risiko, dan dampak format.
 
-### 2. Audit dan laporan Markdown
+### Mode D — Approved DOCX revision
 
-Buat `audit/audit-YYYYMMDD-HHmm.md`. Setiap temuan wajib memiliki:
+Jalankan hanya setelah approval eksplisit. Salin sumber menjadi output versi baru, terapkan perubahan terbatas, lalu verifikasi terhadap baseline dan proposal.
 
-- ID stabil, misalnya `LANG-001`;
-- tingkat: `BLOCKER`, `HIGH`, `MEDIUM`, atau `LOW`;
-- lokasi: bab, subbab, nomor paragraf/tabel, atau kutipan pendek;
-- kategori: bahasa, struktur, sitasi, klaim, format, atau integritas DOCX;
-- masalah yang teramati;
-- aturan/evidence yang dipakai;
-- usulan tindakan atau `PERLU KEPUTUSAN`;
-- status: `OPEN`, `DEFERRED`, atau `READY_FOR_PROPOSAL`.
+### Mode E — Complex issue escalation
 
-Prioritaskan tata bahasa dan kejelasan, lalu struktur argumen, validasi sumber, kalibrasi klaim, dan format. Jangan menyatakan temuan sebagai fakta jika hanya inferensi.
+Gunakan `ai-expert-team` hanya untuk masalah yang benar-benar membutuhkan beberapa perspektif: konflik pedoman, klaim kausal/generalisasi, validasi sitasi yang ambigu, struktur argumen Bab IV–V, atau operasi DOCX berisiko. Hasil council menjadi masukan proposal, bukan izin edit.
 
-### 3. Proposal perubahan
+## Procedure
 
-Buat `proposals/proposal-YYYYMMDD-NN.md` memakai `templates/proposal-edit.md`. Status awal harus `DRAFT`. Proposal harus memetakan setiap perubahan ke ID audit dan mencantumkan teks sebelum/sesudah atau operasi yang jelas.
+### Phase 0 — Establish the case
 
-Kelompokkan proposal berdasarkan risiko:
+1. Tentukan mode kerja dan scope.
+2. Catat file input, versi, ukuran, dan waktu pemeriksaan.
+3. Catat sumber aturan: template UNDIP, EYD, arahan pembimbing, PDF, data penelitian.
+4. Tandai informasi yang hilang dan bagian yang tidak boleh diubah.
+5. Buat case record bila pekerjaan lebih dari pemeriksaan satu paragraf.
 
-- **P1 bahasa:** ejaan, tanda baca, diksi, kalimat, kesinambungan;
-- **P2 struktur:** paragraf, heading, urutan penjelasan, tabel/gambar;
-- **P3 sumber/klaim:** sitasi, interpretasi, generalisasi, klaim kausal;
-- **P4 format DOCX:** style, caption, numbering, TOC, margin, dan layout.
+**Completion criterion:** scope, sumber, batasan, dan status informasi tercatat sebelum ada perubahan.
 
-Jangan menggabungkan P3 atau P4 ke dalam revisi bahasa tanpa persetujuan terpisah jika dampaknya tidak jelas.
+### Phase 1 — Inspect baseline
 
-### 4. Approval gate
+Untuk DOCX, baca body, tabel, header/footer, heading, style yang digunakan, numbering, captions, gambar, field, komentar, dan tracked changes. Periksa package health. Jangan menyimpulkan layout visual hanya dari ekstraksi teks.
 
-Tampilkan atau laporkan proposal kepada pengguna. Tunggu persetujuan yang merujuk pada ID/versi proposal, misalnya `setujui P1 proposal-...`; simpan status `APPROVED` dan waktu persetujuan di Markdown. Jika scope berubah, buat versi proposal baru dan minta persetujuan ulang.
+**Completion criterion:** baseline dapat dibaca ulang dan objek yang akan dibandingkan sudah dihitung/dicatat.
 
-### 5. Edit DOCX secara konservatif
+### Phase 2 — Audit
 
-Setelah disetujui:
+Audit dalam urutan: (1) bahasa dan EYD, (2) struktur kalimat/paragraf, (3) kesinambungan argumen, (4) sitasi dan sumber, (5) level klaim, (6) struktur/format UNDIP, (7) integritas DOCX. Buat satu temuan untuk satu masalah yang dapat ditindaklanjuti; gabungkan hanya masalah yang memiliki penyebab dan perubahan sama.
 
-- salin sumber ke output versi baru;
-- ubah hanya lokasi yang ada di proposal;
-- pertahankan style paragraf, run formatting, heading hierarchy, numbering, tabel, gambar, caption, header/footer, field, komentar, dan tracked changes sejauh alat mendukung;
-- gunakan operasi find/replace yang menjaga format untuk teks yang tidak terpecah; jika teks terpecah antar-run, lakukan pemeriksaan khusus sebelum perubahan;
-- jangan mengubah seluruh paragraf dengan `cell.text` atau operasi yang mereset format kecuali proposal menyetujui dampaknya;
-- jangan memperbarui TOC/nomor halaman secara manual sebagai klaim final; Word/LibreOffice mungkin perlu membuka dan memperbarui field.
+Setiap temuan harus mencantumkan ID, level, lokasi, kutipan, kategori, masalah, aturan/bukti, usulan, dampak, dan status. Jangan menulis “perbaiki bahasa” tanpa menjelaskan bagian yang salah dan bentuk perbaikannya.
 
-Jika perlu menulis ulang paragraf, pertahankan makna, sitasi, istilah teknis, dan struktur style. Perubahan substansial harus ditampilkan dalam proposal sebelum diterapkan.
+**Completion criterion:** semua temuan yang masuk scope memiliki ID stabil dan status.
 
-### 6. Verifikasi pasca-edit
+### Phase 3 — Proposal
 
-Buat `audit/verification-YYYYMMDD-NN.md` dan lakukan semua pemeriksaan berikut:
+Buat proposal berdasarkan audit. Untuk perubahan teks, tampilkan teks sebelum, teks usulan, dan alasan. Untuk perubahan format, tampilkan properti yang akan diubah dan properti yang dipertahankan. Pisahkan P1 bahasa, P2 struktur, P3 sumber/klaim, dan P4 format DOCX bila risiko atau approval-nya berbeda.
 
-- file output dapat dibuka dan lolos health check DOCX;
-- teks lama hilang hanya pada lokasi yang ditargetkan dan teks baru ada;
-- heading, jumlah tabel/gambar, caption, daftar, style, header/footer, komentar, dan tracked changes dibandingkan dengan baseline;
-- tidak ada perubahan di luar proposal yang disetujui;
-- sitasi dan daftar pustaka tetap utuh;
-- output dibaca ulang sebagai DOCX, bukan hanya dari teks proposal;
-- layout visual diverifikasi dengan Word/LibreOffice jika tersedia; jika tidak, status layout adalah `PARTIAL`, bukan `PASS`.
+**Completion criterion:** pengguna dapat menyetujui atau menolak setiap perubahan tanpa harus menebak scope.
 
-Gunakan verdict `PASS`, `PARTIAL`, atau `FAIL`. Jangan menyebut pekerjaan selesai bila ada blocker yang belum diberi keputusan.
+### Phase 4 — Approval
 
-## UNDIP Informatika Rules
+Tampilkan proposal atau ringkasan lengkapnya. Tunggu approval eksplisit yang menyebut proposal dan item, misalnya `setujui proposal-2026-001 P1-001 dan P1-002`. Simpan keputusan, waktu, dan catatan. Jika pengguna hanya menyetujui sebagian, status item lain tetap `MENUNGGU`.
 
-Detail kerja ada di `references/undip-informatika-2024.md`. Terapkan dengan status sumber yang jelas:
+**Completion criterion:** hanya item berstatus `APPROVED` yang masuk edit plan.
 
-- abstrak Indonesia dan Inggris satu paragraf, satu spasi, tanpa indentasi baris pertama, maksimal 300 kata;
-- isi utama umumnya spasi 1,5; heading maksimal sampai level 4;
-- daftar isi, daftar tabel, dan daftar gambar sebaiknya memakai field otomatis;
-- tabel, gambar, flowchart, bagan, dan komponen lain harus disebut oleh paragraf;
-- caption dan penomoran mengikuti bab serta urutan kemunculan;
-- tabel satu spasi, tidak melewati margin, header diulang jika tabel bersambung;
-- pemerian menggunakan nomor atau huruf, bukan bullet;
-- source code memakai tabel 2 baris 1 kolom, Courier New 10 pt, tanpa caption/daftar source code di bagian depan;
-- persamaan rata kiri dan semua simbol dijelaskan;
-- daftar pustaka menggunakan APA 7 atau format setara yang diwajibkan template;
-- jangan menghapus tabel petunjuk/template tanpa memastikan bagian tersebut memang bukan isi naskah pengguna.
+### Phase 5 — Conservative edit
 
-### Istilah Inggris dan italic
+Gunakan kemampuan `docx` yang tersedia. Kerjakan perubahan kecil, jaga run formatting dan style, dan simpan ke nama output baru. Jika target teks terpecah antar-run, lakukan pemeriksaan run sebelum mengganti. Jangan menggunakan operasi cell/paragraph yang mereset format tanpa proposal yang menyebut dampaknya.
 
-Jangan memiringkan istilah hanya karena berbahasa Inggris. Klasifikasikan dahulu:
+**Completion criterion:** output dibuat, sumber tetap utuh, dan setiap operasi dapat dipetakan ke item proposal.
 
-- istilah asing umum yang belum terserap dan bukan nama khusus: dapat menggunakan *italic*;
-- nama metode, algoritma, model, arsitektur, framework, library, software, dan singkatan: umumnya tidak italic;
-- kepanjangan teknis dalam kurung: tidak otomatis italic;
-- istilah yang sudah diserap: gunakan bentuk Indonesia tanpa italic;
-- `ABSTRACT` dan isinya mengikuti aturan template, tidak dimiringkan hanya karena berbahasa Inggris.
+### Phase 6 — Verify
 
-Jika status istilah tidak pasti, tandai untuk keputusan pengguna atau cek pedoman/sumber yang tersedia.
+Baca ulang output sebagai DOCX. Bandingkan teks target, teks non-target, heading, style, numbering, tabel, gambar, captions, field, komentar, tracked changes, dan package health. Perbarui field/TOC hanya sesuai persetujuan; field mungkin baru dihitung ketika Word/LibreOffice membuka dokumen. Lakukan pemeriksaan visual jika tersedia.
 
-### Sitasi dan sumber
+**Completion criterion:** verification report berisi verdict per acceptance criterion dan tidak menyembunyikan keterbatasan.
 
-- Bab I–II: cocokkan setiap klaim bersitasi dengan PDF di `references/`; bedakan isi eksplisit sumber dari inferensi.
-- Bab III–V: jangan menambah sitasi berdasarkan aturan kerja ini; gunakan metode, data, hasil, analisis, dan kesimpulan penelitian. Jika aturan institusi atau pembimbing berbeda, tandai konflik dan minta keputusan.
-- Jangan membuat penulis, tahun, judul, DOI, URL, hasil, atau nomor halaman yang tidak tersedia.
-- Daftar pustaka harus ditelusuri balik ke sitasi dan sumber yang tersedia; item tanpa provenance diberi status `BELUM TERVERIFIKASI`.
+## Output Contracts
 
-### Kalibrasi klaim Bab IV–V
+### Audit report
 
-Bedakan deskripsi temuan, interpretasi, dan implikasi. Sesuaikan kekuatan kata kerja dengan desain, sampel, variabel, instrumen, analisis, dan batasan penelitian. Hindari `membuktikan`, `memastikan`, `selalu`, `pasti`, generalisasi universal, dan `menyebabkan` bila desain tidak mendukung kausalitas. Utamakan `menunjukkan`, `menggambarkan`, `mengindikasikan`, `ditemukan bahwa`, dan `dalam konteks penelitian ini`.
-
-## AI Expert Team Escalation
-
-Gunakan `ai-expert-team` hanya bila masalahnya kompleks: konflik pedoman, masalah metodologi, klaim kausal/generalisasi, konflik sitasi, atau perubahan DOCX berisiko tinggi. Untuk typo atau aturan format yang jelas, jangan memanggilnya.
-
-Handoff harus read-only dan memuat scope, out-of-scope, evidence yang wajib, alat yang diizinkan, larangan edit/commit/push, dan acceptance criteria. Pilih satu decision owner, 3–5 spesialis yang tidak tumpang tindih, serta verifier. Hasilnya hanya masukan: masukkan temuan terverifikasi ke proposal Markdown dan tetap minta approval. Expert consensus bukan bukti.
-
-## Output Contract
-
-Audit:
+Gunakan `templates/audit-report.md` dan simpan di `audit/`. Minimum:
 
 ```markdown
 # Audit Skripsi
 Status: DRAFT
-Baseline: ...
+DOCX sumber: ...
+Scope: ...
+Pedoman/sumber: ...
+
+## Ringkasan
+...
 
 ## Temuan
-| ID | Level | Lokasi | Kategori | Masalah | Bukti/aturan | Tindakan | Status |
+| ID | Level | Lokasi | Kategori | Masalah teramati | Bukti/aturan | Usulan | Dampak | Status |
+|---|---|---|---|---|---|---|---|---|
 ```
 
-Proposal:
+### Proposal
+
+Gunakan `templates/proposal-edit.md`. Status awal `DRAFT`; setiap item memiliki `Approval: MENUNGGU`.
+
+### Verification report
+
+Gunakan `templates/verification-report.md`. Wajib menyebut sumber, output, proposal/version, operasi, target/non-target comparison, DOCX health, visual status, verdict, dan unresolved items.
+
+### Writing response
+
+Jika pengguna meminta teks, gunakan:
 
 ```markdown
-# Proposal Revisi
-Status: DRAFT
-Scope: ...
+## Teks Revisi
+...
 
-## Perubahan
-### [ID] [P1/P2/P3/P4]
-- Sebelum:
-- Sesudah/usulan:
-- Alasan dan sumber:
-- Dampak/risiko:
-- Approval: MENUNGGU
+## Diagnosis
+- Bab/subbab:
+- Ide pokok:
+- Struktur kalimat: Subjek / Predikat / Objek-Pelengkap / Keterangan
+- EYD dan tanda baca:
+- Struktur paragraf:
+- Status sitasi:
+- Status klaim:
+
+## Catatan Batasan
+...
 ```
 
-Final report wajib menyebut file sumber, file output, proposal yang disetujui, verdict verifikasi, perubahan yang dibuat, dan keterbatasan layout atau sumber.
+Jangan memaksa format 4–5 kalimat jika membuat isi berulang. Jika pengguna hanya meminta teks jadi, berikan teks terlebih dahulu dan catatan hanya untuk risiko kebenaran, sumber, atau scope.
 
-## Pitfalls
+## References and Templates
 
-- Jangan menganggap DOCX sehat hanya karena teks berhasil diekstrak.
-- Jangan mengedit sumber langsung.
-- Jangan mengubah style menjadi plain text demi memudahkan find/replace.
-- Jangan menyimpulkan PDF kosong berarti tidak memiliki isi; mungkin berupa scan.
-- Jangan menganggap template contoh sebagai aturan terbaru tanpa mencatat sumber dan versinya.
-- Jangan memindahkan klaim Bab IV–V ke tingkat yang lebih kuat hanya karena kalimatnya menjadi lebih formal.
-- Jangan memasukkan PDF jurnal berhak cipta, skripsi, data, atau identitas ke repo publik.
-- Jangan menyatakan layout sempurna tanpa verifikasi visual.
+Seluruh aturan panjang, contoh, tabel keputusan, dan format artefak berada di `references/` dan `templates/`. Baca file yang relevan; jangan menjejalkan semua referensi ke setiap tugas. Folder `references/` proyek skripsi adalah tempat PDF pengguna, sedangkan `references/` dalam repo skill berisi pedoman umum dan template kerja.
 
 ## Verification Checklist
 
-- [ ] Baseline DOCX dan input references dicatat.
-- [ ] Audit Markdown selesai sebelum edit.
-- [ ] Setiap perubahan punya ID audit dan proposal.
-- [ ] Proposal disetujui eksplisit sebelum edit.
-- [ ] Sumber asli tidak tertimpa.
-- [ ] Edit terbatas pada scope proposal.
-- [ ] Output DOCX lolos health check dan dibaca ulang.
-- [ ] Struktur, style, tabel, gambar, caption, field, komentar, dan revisi dibandingkan.
-- [ ] Sitasi dan provenance PDF diberi status.
-- [ ] Klaim Bab IV–V dikalibrasi.
-- [ ] Keterbatasan layout dilaporkan.
-- [ ] Tidak ada commit/push/publish tanpa persetujuan terpisah.
+- [ ] Mode, scope, input, dan batasan tercatat.
+- [ ] Audit selesai sebelum edit.
+- [ ] Setiap perubahan mempunyai ID audit dan proposal.
+- [ ] Approval eksplisit tercatat per item.
+- [ ] DOCX sumber tidak tertimpa.
+- [ ] Output hanya mengubah scope yang disetujui.
+- [ ] EYD dan struktur kalimat diperiksa.
+- [ ] Sitasi ditelusuri ke PDF atau ditandai belum terverifikasi.
+- [ ] Klaim Bab IV–V sesuai bukti dan batas desain.
+- [ ] Aturan UNDIP diperiksa.
+- [ ] DOCX dibaca ulang dan package health diverifikasi.
+- [ ] Struktur/style/objek non-target dibandingkan.
+- [ ] Layout visual diberi status PASS/PARTIAL/FAIL.
+- [ ] Semua unresolved item dilaporkan.
+
+## Pitfalls
+
+- Bahasa formal bukan otomatis bahasa yang jelas.
+- Jumlah kalimat bukan alasan untuk menambah kalimat tanpa isi.
+- Consensus expert bukan bukti.
+- PDF yang gagal diekstrak mungkin scan; jangan menganggap isinya kosong.
+- DOCX yang berhasil diekstrak belum tentu layout-nya aman.
+- Perubahan pada field, numbering, atau caption dapat mengubah banyak halaman; perlakukan sebagai P4.
+- Nama metode/model/software tidak otomatis *italic* hanya karena berbahasa Inggris.
+- Klaim yang terdengar lebih ilmiah dapat menjadi lebih salah jika terlalu kuat.
+- Repo publik hanya boleh memuat skill umum; jangan memasukkan materi skripsi atau PDF berhak cipta.

@@ -2,31 +2,46 @@
 
 Status: DRAFT
 Proposal ID: proposal-YYYYMMDD-NN
-Baseline DOCX: 
-Audit: 
-Scope: 
-Dibuat: 
+Version: 1
+Baseline DOCX:
+Audit:
+Scope:
+Dibuat:
 
-## Perubahan
+## Approval summary
+
+- Persetujuan: MENUNGGU
+- Disetujui item:
+- Ditolak item:
+- Menunggu keputusan:
+- Waktu keputusan:
+- Catatan pengguna:
+
+## Changes
 
 ### [AUDIT-ID] [P1/P2/P3/P4]
-- **Lokasi:**
+
+- **Change ID:** CHG-001
+- **Lokasi:** bab/subbab/paragraf/tabel/run
 - **Sebelum:**
 - **Sesudah/usulan:**
-- **Masalah:**
-- **Alasan dan sumber aturan:**
-- **Dampak terhadap sitasi/struktur/format:**
-- **Risiko atau keputusan yang diperlukan:**
+- **Diagnosis:** subjek / predikat / objek-pelengkap / keterangan / EYD / sitasi / klaim / format
+- **Alasan:**
+- **Sumber/aturan:**
+- **Evidence:**
+- **Expected DOCX operation:**
+- **Preservation requirements:**
+- **Impact:**
+- **Risk:**
+- **Rollback:**
 - **Approval:** MENUNGGU
 
-## Batasan
+## Out of scope
 
-- Bagian yang tidak boleh diubah:
-- Layout yang belum dapat diverifikasi:
-- Sumber yang belum tervalidasi:
+- ...
 
-## Keputusan pengguna
+## Preconditions
 
-- Persetujuan eksplisit:
-- Waktu:
-- Catatan:
+- [ ] Source DOCX copied/versioned.
+- [ ] Required PDF/source evidence available.
+- [ ] No unresolved conflict blocks this item.
