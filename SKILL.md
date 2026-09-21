@@ -36,7 +36,24 @@ Sebelum bekerja, minta atau temukan:
 - folder kerja skripsi yang memuat `references/` untuk PDF jurnal/artikel yang benar-benar digunakan;
 - bab/subbab dan tujuan pekerjaan bila audit tidak mencakup seluruh dokumen;
 - data, metode, hasil, dan keputusan pengguna yang menjadi dasar Bab III–V;
-- pedoman/template UNDIP Informatika yang berlaku. Gunakan `references/undip-informatika-2024.md` sebagai ringkasan kerja, bukan pengganti dokumen resmi.
+- pedoman/template UNDIP Informatika yang berlaku. Gunakan `references/undip-informatika-2024.md` sebagai ringkasan kerja, bukan pengganti dokumen resmi terbaru.
+- pedoman EYD Edisi Kelima dari https://eyd.netlify.app/. Gunakan `references/eyd-edisi-kelima.md` untuk halaman rujukan.
+
+Jika PDF tidak ada, tidak terbaca, atau hanya berupa scan tanpa OCR, tandai sitasi sebagai `BELUM TERVERIFIKASI`; jangan menebak metadata atau isi sumber.
+
+## EYD Edisi Kelima dan Struktur Kalimat
+
+Gunakan https://eyd.netlify.app/ untuk huruf, kata, tanda baca, dan unsur serapan. EYD mengatur ejaan dan tanda baca; jangan mengklaim EYD sendirian membuktikan kebenaran metodologi atau seluruh sintaksis.
+
+Untuk setiap kalimat, periksa subjek, predikat, objek/pelengkap, keterangan, hubungan logis, kehematan, kepaduan, panjang kalimat, tanda baca, dan pelestarian makna ilmiah. Gunakan pola diagnosis awal `Subjek + Predikat + Objek/Pelengkap + Keterangan`, bukan rumus wajib. Kalimat pasif boleh jika fokus ilmiah memang pada objek atau proses.
+
+Contoh audit:
+
+- Kurang jelas: `Dilakukan pengujian pada sistem menggunakan data uji.`
+- Lebih jelas: `Peneliti melakukan pengujian sistem menggunakan data uji.`
+- Jika fokus pada sistem: `Sistem diuji menggunakan data uji.`
+
+Pilih versi berdasarkan makna yang dimaksud. Jangan memiringkan semua istilah Inggris otomatis: istilah asing umum yang belum terserap dapat dimiringkan, sedangkan nama metode, model, arsitektur, framework, software, merek, singkatan, dan kepanjangan teknis dalam kurung umumnya tidak otomatis dimiringkan. Jika EYD, template UNDIP, gaya sitasi, dan arahan pembimbing berbeda, catat konflik dan minta keputusan.
 
 Jika PDF tidak ada, tidak terbaca, atau hanya berupa scan tanpa OCR, tandai sitasi sebagai `BELUM TERVERIFIKASI`; jangan menebak metadata atau isi sumber.
 
