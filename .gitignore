@@ -1,0 +1,9 @@
+# Private thesis data
+*.docx
+*.doc
+*.pdf
+*.odt
+*.zip
+/audit/
+/proposals/
+/.env
