@@ -36,6 +36,20 @@ Untuk setiap kalimat yang diedit, tulis diagnosis ringkas:
 
 Pola `Subjek + Predikat + Objek/Pelengkap + Keterangan` adalah diagnosis awal, bukan rumus wajib. Kalimat pasif tetap benar bila fokus ilmiah berada pada objek atau proses.
 
+## Strict sentence-clarity protocol
+
+SPOK digunakan sebagai alat pemeriksaan ketat, bukan aturan bahwa semua kalimat harus memiliki seluruh unsur S-P-O-K. Sebelum menerima kalimat, lakukan pemeriksaan berikut:
+
+1. Tandai predikat utama. Jika predikat utama tidak dapat ditentukan, kalimat harus dirombak.
+2. Tandai subjek yang melakukan tindakan atau menjadi pokok pembicaraan. Jangan biarkan subjek hanya tersirat jika hal itu membuat pelaku atau objek pembahasan ambigu.
+3. Tentukan apakah predikat membutuhkan objek atau pelengkap. Verba transitif seperti `menggunakan`, `mempelajari`, `menentukan`, dan `menghasilkan` tidak boleh dibiarkan tanpa unsur yang melengkapinya.
+4. Pisahkan klausa utama dan klausa bawahan. Setiap klausa harus memiliki hubungan yang jelas, misalnya sebab, syarat, tujuan, waktu, atau pertentangan.
+5. Periksa rujukan kata seperti `ini`, `tersebut`, `kondisi tersebut`, dan `hal ini`. Rujukan harus menunjuk pada satu unsur yang jelas.
+6. Uji kalimat dengan pertanyaan: siapa/apa yang dibahas, melakukan/berada dalam keadaan apa, terhadap apa/siapa, dan dalam kondisi apa.
+7. Pecah kalimat jika terdapat lebih dari satu gagasan utama, subjek berganti tanpa penanda, atau anak kalimat lebih sulit dipahami daripada induk kalimatnya.
+
+Kalimat dinyatakan `LULUS` jika subjek dan predikat utama jelas, unsur wajib predikat hadir, hubungan klausa terbaca, dan tidak ada rujukan ambigu. Kalimat dapat dinyatakan `LULUS DENGAN CATATAN` jika strukturnya sah tetapi memerlukan pengetahuan teknis yang sudah dijelaskan. Kalimat dinyatakan `PERLU REVISI` jika pembaca harus menebak subjek, predikat, objek/pelengkap, atau hubungan antarklausa.
+
 ## Example
 
 Kurang jelas:

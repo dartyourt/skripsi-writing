@@ -26,12 +26,25 @@ Status yang diperbolehkan: `SESUAI`, `SEBAGIAN`, `TIDAK SESUAI`, `BELUM TERVERIF
 ## Rules
 
 - Jangan membuat penulis, tahun, judul, DOI, URL, volume, halaman, atau hasil.
+- Setiap definisi, fakta teknis, deskripsi metode terdahulu, angka, hasil, dan klaim eksternal harus dapat ditelusuri ke sumber. Sitasi tidak harus diulang pada setiap kalimat jika beberapa kalimat berturut-turut masih merujuk pada sumber dan klaim yang sama; ulangi ketika sumber, klaim, atau paragraf berubah.
+- Jangan mempertahankan sitasi lama hanya karena sudah ada; cocokkan klaim dengan isi PDF.
 - Bedakan pernyataan eksplisit dari sumber dan kesimpulan yang dibuat dari sumber.
 - Jangan memperluas populasi, konteks, metode, atau hasil paper.
 - Jika paper hanya mendukung korelasi, jangan menulis kausalitas.
 - Jika metadata dalam naskah berbeda dengan PDF, laporkan konflik; jangan memperbaiki berdasarkan tebakan.
 - Daftar pustaka harus ditelusuri balik ke sitasi dan sumber yang tersedia.
 - Sumber di folder kerja privat tidak otomatis boleh disalin ke repo publik.
+
+## Appropriate citation frequency
+
+- Sitasi tidak harus diulang pada setiap kalimat jika beberapa kalimat berturut-turut masih membahas klaim dan sumber yang sama.
+- Letakkan sitasi setelah kalimat atau rangkaian kalimat yang didukung sumber tersebut; pastikan cakupan sitasinya mudah dipahami.
+- Gunakan sitasi naratif ketika nama penulis ingin dijadikan bagian dari alur, misalnya `Ross dkk. (2018) menjelaskan ...`.
+- Gunakan sitasi parentetik ketika fokus berada pada informasi, misalnya `... pada rekaman seismik (Ross dkk., 2018)`.
+- Ulangi sitasi jika sumber berubah, klaim baru muncul, paragraf berganti, atau pembaca dapat salah memahami sumber yang dirujuk.
+- Jangan menumpuk sumber yang sama berulang kali pada satu kalimat jika satu sitasi sudah mencakup seluruh klaim dalam kalimat tersebut.
+- Jika satu kalimat memuat klaim yang didukung sumber berbeda, pisahkan klaim atau gunakan sitasi gabungan hanya jika semua sumber benar-benar mendukung klaim yang sama.
+- Aturan ini mengatur keterbacaan dan keterlacakan, bukan menggantikan gaya sitasi yang diwajibkan program studi.
 
 ## Chapter handling
 

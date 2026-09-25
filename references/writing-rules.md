@@ -44,7 +44,13 @@ Pola `S-P-O/Pel-K` adalah alat diagnosis, bukan kewajiban semua kalimat. Kalimat
 
 ## 6. Kejelasan konsep Informatika
 
-Gunakan urutan yang sesuai kebutuhan: konsep umum → konteks masalah → proses/komponen → istilah teknis → alasan pentingnya konsep → batasan. Jangan memperkenalkan banyak singkatan sebelum kepanjangannya. Konsistenkan istilah yang sama di seluruh dokumen.
+Gunakan urutan yang sesuai kebutuhan: konsep umum → masalah umum → konteks masalah khusus → proses/komponen → istilah teknis → keterbatasan pendekatan yang ada → alasan pendekatan penelitian. Untuk pendahuluan, gunakan bentuk piramida dari umum ke khusus: pentingnya topik, masalah umum, masalah khusus, pendekatan yang sudah ada, keterbatasan atau gap, lalu tujuan/solusi penelitian.
+
+Sebelum membahas model atau metode, jelaskan fungsi objek yang diproses dan kapan informasi tersebut digunakan. Untuk istilah teknis, jawab secara berurutan: apa objeknya, kapan digunakan, informasi apa yang diberikan, dan bagaimana informasi tersebut dipakai dalam penelitian. Jangan menyamakan label teknis dengan fenomena yang lebih luas jika maknanya lebih terbatas.
+
+Saat membahas beberapa arsitektur, jelaskan alasan pemilihannya berdasarkan kemampuan yang dibutuhkan. Misalnya, CNN dikaitkan dengan pola lokal, Transformer dengan hubungan pada rentang yang lebih panjang, dan model hibrida dengan penggabungan kedua kemampuan tersebut, hanya jika klaim itu didukung sumber yang tersedia.
+
+Jangan memperkenalkan banyak singkatan sebelum kepanjangannya. Konsistenkan istilah yang sama di seluruh dokumen.
 
 ## 7. Contoh diagnosis
 

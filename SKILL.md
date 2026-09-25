@@ -79,16 +79,17 @@ Jika konteks penting tidak tersedia, lanjutkan hanya pada audit yang dapat dibuk
 4. **Scope terbatas.** Terapkan hanya item yang disetujui; jangan melakukan perbaikan massal yang tidak terdaftar.
 5. **Source immutable.** Default selalu menghasilkan DOCX baru, bukan menimpa file sumber.
 6. **Evidence first.** Klaim dari PDF, data, atau pedoman harus dapat ditelusuri ke sumbernya.
-7. **No silent strengthening.** Perbaikan bahasa tidak boleh menaikkan kepastian, memperluas populasi, atau mengubah hubungan korelasi menjadi sebab-akibat.
-8. **No raw XML editing.** Gunakan kemampuan DOCX yang sesuai; jangan melakukan substitusi string pada ZIP/XML DOCX secara sembarangan.
-9. **No publication by default.** Jangan commit, push, upload, atau publish dokumen pengguna, PDF referensi, data, atau identitas mahasiswa.
-10. **Uncertainty is a result.** Gunakan `PASS`, `PARTIAL`, `FAIL`, `BELUM TERVERIFIKASI`, atau `PERLU KEPUTUSAN` bila bukti tidak cukup.
+7. **Citation per external claim.** Definisi, fakta teknis, deskripsi metode terdahulu, angka, hasil, dan klaim yang tidak berasal dari observasi/eksperimen pengguna harus dapat ditelusuri ke sumber. Sitasi tidak harus diulang pada setiap kalimat jika beberapa kalimat berturut-turut masih merujuk pada sumber dan klaim yang sama; ulangi ketika sumber, klaim, atau paragraf berubah.
+8. **No silent strengthening.** Perbaikan bahasa tidak boleh menaikkan kepastian, memperluas populasi, atau mengubah hubungan korelasi menjadi sebab-akibat.
+9. **No raw XML editing.** Gunakan kemampuan DOCX yang sesuai; jangan melakukan substitusi string pada ZIP/XML DOCX secara sembarangan.
+10. **No publication by default.** Jangan commit, push, upload, atau publish dokumen pengguna, PDF referensi, data, atau identitas mahasiswa.
+11. **Uncertainty is a result.** Gunakan `PASS`, `PARTIAL`, `FAIL`, `BELUM TERVERIFIKASI`, atau `PERLU KEPUTUSAN` bila bukti tidak cukup.
 
 ## Operating Modes
 
 ### Mode A — Writing from supplied material
 
-Gunakan ketika pengguna memberi kerangka atau bahan teks, bukan meminta perubahan DOCX. Tetapkan bab dan subbab, rumuskan ide pokok, susun paragraf, periksa EYD, struktur kalimat, istilah teknis, sitasi, dan tingkat klaim. Tampilkan hasil dengan format output yang sesuai; jangan menambahkan fakta yang tidak ada di bahan.
+Gunakan ketika pengguna memberi kerangka atau bahan teks, bukan meminta perubahan DOCX. Tetapkan bab dan subbab, rumuskan ide pokok, susun paragraf, periksa EYD, struktur kalimat, istilah teknis, sitasi, dan tingkat klaim. Untuk pendahuluan, petakan setiap paragraf ke fungsi piramida: pentingnya topik, masalah umum, masalah khusus, pendekatan yang ada, keterbatasan/gap, atau tujuan/solusi. Tampilkan hasil dengan format output yang sesuai; jangan menambahkan fakta yang tidak ada di bahan.
 
 ### Mode B — Read-only DOCX audit
 
@@ -195,8 +196,11 @@ Jika pengguna meminta teks, gunakan:
 
 ## Diagnosis
 - Bab/subbab:
+- Fungsi paragraf dalam alur umum-ke-khusus: pentingnya topik / masalah umum / masalah khusus / pendekatan / gap / tujuan
 - Ide pokok:
 - Struktur kalimat: Subjek / Predikat / Objek-Pelengkap / Keterangan
+- Istilah teknis: apa objeknya / kapan digunakan / informasi yang diberikan / penggunaannya dalam penelitian
+- Transisi antarparagraf:
 - EYD dan tanda baca:
 - Struktur paragraf:
 - Status sitasi:
@@ -206,7 +210,7 @@ Jika pengguna meminta teks, gunakan:
 ...
 ```
 
-Jangan memaksa format 4–5 kalimat jika membuat isi berulang. Jika pengguna hanya meminta teks jadi, berikan teks terlebih dahulu dan catatan hanya untuk risiko kebenaran, sumber, atau scope.
+Untuk pendahuluan, jangan melompat dari definisi istilah langsung ke model. Pastikan masalah umum dan masalah khusus sudah dijelaskan, metode konvensional sudah dibandingkan dengan pendekatan otomatis, dan alasan pemilihan setiap arsitektur terlihat. Jika pengguna hanya meminta teks jadi, berikan teks terlebih dahulu dan catatan hanya untuk risiko kebenaran, sumber, atau scope.
 
 ## References and Templates
 
