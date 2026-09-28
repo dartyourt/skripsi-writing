@@ -29,20 +29,33 @@ Empat sampai lima kalimat adalah panduan kerja untuk paragraf penjelasan, bukan 
 
 Sebelum menulis paragraf berikutnya, nyatakan hubungannya: lanjutan, sebab-akibat, perbandingan, contoh, pembatasan, metode, hasil, atau implikasi. Gunakan konjungsi hanya bila hubungan tersebut memang ada. Periksa apakah pembaca memahami mengapa topik berpindah.
 
-## 5. Struktur kalimat
+Gunakan uji `unsur dibawa → fungsi berikutnya → alasan urutan` untuk setiap pasangan paragraf. Kalimat terakhir paragraf sebelumnya harus meninggalkan konsep, masalah, temuan, pertanyaan, atau batasan yang dapat diambil oleh kalimat pertama paragraf berikutnya. Kalimat pertama paragraf berikutnya harus mengambil, mempersempit, menjawab, mengembangkan, membandingkan, atau membatasi unsur tersebut. Jika paragraf baru tetap dapat dipindahkan ke lokasi lain tanpa mengubah makna, tandai transisi sebagai `PUTUS`.
 
-Diagnosis setiap kalimat dengan:
+Jangan menganggap kata “selanjutnya”, “berdasarkan hal tersebut”, “oleh karena itu”, atau “selain itu” sebagai transisi yang cukup. Konjungsi hanya menamai hubungan; isi kalimat harus menunjukkan hubungan tersebut.
 
-1. Subjek: siapa/apa yang dibicarakan.
-2. Predikat: tindakan, keadaan, atau hubungan.
-3. Objek/pelengkap: unsur yang diperlukan predikat.
-4. Keterangan: waktu, tempat, cara, tujuan, sebab, syarat, atau batasan.
-5. Hubungan klausa: koordinasi/subordinasi dan konjungsi tepat.
-6. Rujukan: kata ganti dan istilah merujuk pada objek yang jelas.
+## 5. Struktur kalimat dan pemeriksaan SPOK
+
+Diagnosis setiap kalimat dengan urutan berikut:
+
+1. **Subjek:** siapa atau apa yang dibicarakan; jangan biarkan subjek hanya tersirat jika pergantian subjek dapat membingungkan.
+2. **Predikat:** tindakan, keadaan, atau hubungan; pastikan predikat menjadi inti yang jelas dan tidak tertutup oleh keterangan panjang.
+3. **Objek/pelengkap:** unsur yang diperlukan predikat; jangan menghapus unsur wajib hanya agar kalimat lebih singkat.
+4. **Keterangan:** waktu, tempat, cara, tujuan, sebab, syarat, atau batasan; tempatkan dekat dengan unsur yang diterangkannya.
+5. **Hubungan klausa:** koordinasi/subordinasi dan konjungsi harus sesuai dengan hubungan logisnya.
+6. **Rujukan:** kata ganti, kata tunjuk, dan istilah harus memiliki anteseden tunggal yang jelas.
+7. **Pusat informasi:** setiap kalimat harus memiliki satu informasi utama; informasi tambahan harus mendukung, membatasi, atau menjelaskan informasi tersebut.
+
+Gunakan pertanyaan wajib berikut sebelum menerima kalimat: “Siapa/apa subjeknya?”, “Apa predikatnya?”, “Apa yang dikenai atau dilengkapi predikat?”, “Keterangan mana yang dibatasi?”, dan “Kata apa yang dirujuk oleh setiap kata tunjuk?” Jika salah satu jawaban tidak jelas, status kalimat adalah `PERLU REVISI`.
 
 Pola `S-P-O/Pel-K` adalah alat diagnosis, bukan kewajiban semua kalimat. Kalimat pasif boleh jika fokusnya objek/proses. Pecah kalimat bila terlalu banyak klausa, tetapi jangan menghapus kondisi, batasan, atau hubungan sebab-akibat.
 
-## 6. Kejelasan konsep Informatika
+## 6. Konsistensi istilah lintas bab dan lintas sesi
+
+Jadikan Bab I dari DOCX skripsi awal sebagai baseline. Pertahankan istilah, definisi, bentuk lengkap–singkatan, kapitalisasi, bentuk tunggal/jamak, nama variabel, nama kelas, nama metode/model, dan pola penyebutan yang telah dipakai. Jangan mengganti istilah hanya untuk menghindari pengulangan.
+
+Jika istilah baru diperlukan, tandai `BARU`, jelaskan alasan penggunaannya, lalu periksa apakah istilah tersebut tumpang tindih dengan istilah Bab I. Jika DOCX awal Bab I tidak tersedia, nyatakan `BELUM TERVERIFIKASI` dan jangan menyimpulkan bahwa dua istilah adalah sinonim.
+
+## 7. Kejelasan konsep Informatika
 
 Gunakan urutan yang sesuai kebutuhan: konsep umum → masalah umum → konteks masalah khusus → proses/komponen → istilah teknis → keterbatasan pendekatan yang ada → alasan pendekatan penelitian. Untuk pendahuluan, gunakan bentuk piramida dari umum ke khusus: pentingnya topik, masalah umum, masalah khusus, pendekatan yang sudah ada, keterbatasan atau gap, lalu tujuan/solusi penelitian.
 
@@ -52,7 +65,7 @@ Saat membahas beberapa arsitektur, jelaskan alasan pemilihannya berdasarkan kema
 
 Jangan memperkenalkan banyak singkatan sebelum kepanjangannya. Konsistenkan istilah yang sama di seluruh dokumen.
 
-## 7. Contoh diagnosis
+## 8. Contoh diagnosis
 
 Terlalu padat:
 
@@ -66,11 +79,16 @@ Lebih mudah dipahami:
 
 Saat merevisi, jelaskan perubahan; jangan mengklaim versi baru lebih benar secara ilmiah jika sumber faktanya belum diperiksa.
 
-## 8. Pemeriksaan akhir bahasa
+## 9. Pemeriksaan akhir bahasa dan kesinambungan
 
 - Subjek dan predikat jelas.
+- Objek atau pelengkap hadir jika dituntut oleh predikat.
+- Pusat informasi setiap kalimat tunggal dan mudah ditemukan.
+- Kata rujukan memiliki anteseden yang jelas.
 - Tidak ada kata mubazir atau pengulangan.
 - Istilah teknis konsisten.
 - Kalimat tidak menjadi lebih kuat daripada bukti.
-- Transisi antarparagraf dapat dijelaskan.
+- Transisi antarparagraf dapat dijelaskan dengan format `unsur dibawa → fungsi berikutnya → alasan urutan`.
+- Kalimat terakhir paragraf sebelumnya dan kalimat pertama paragraf berikutnya tersambung secara makna.
+- Istilah yang berbeda dari Bab I ditandai dan dijelaskan.
 - Perubahan tidak menghapus sitasi, batasan, angka, kondisi, atau istilah penting.
