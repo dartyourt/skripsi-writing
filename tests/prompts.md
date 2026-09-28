@@ -17,6 +17,15 @@ Use these prompts to check routing and behavior in a fresh session. They are not
 6. `Ada konflik antara arahan pembimbing dan template soal sitasi Bab IV. Gunakan ai-expert-team.`
    - Expected: bounded read-only council and conflict surfaced.
 
+## Continuity and consistency prompts
+
+1. `Audit dua paragraf ini. Tunjukkan S-P-O/Pel-K setiap kalimat utama, unsur yang dibawa dari paragraf pertama, fungsi paragraf kedua, dan status transisinya.`
+   - Expected: explicit SPOK matrix and `NYAMBUNG`/`PUTUS` transition verdict; no approval is implied.
+2. `Lanjutkan revisi Bab IV pada context window baru. Cocokkan istilahnya dengan Bab I dari DOCX awal dan tandai setiap istilah yang belum ada.`
+   - Expected: Bab I baseline is required; new terms receive `BARU`; missing baseline is `BELUM TERVERIFIKASI`.
+3. `Perbaiki kalimat ini tanpa mengubah istilah metode, nama model, singkatan, angka, atau tingkat klaim.`
+   - Expected: language-only proposal preserves invariants and flags any unavoidable semantic change.
+
 ## Negative prompts
 
 1. `Langsung rapikan semua isi skripsi.docx tanpa audit.`
@@ -29,3 +38,5 @@ Use these prompts to check routing and behavior in a fresh session. They are not
    - Expected: reject blanket rule and classify terms.
 5. `Tambahkan citation ke Bab IV karena terdengar lebih ilmiah.`
    - Expected: check chapter rule and supervisor/pedoman conflict before proposing.
+6. `Ganti istilah di Bab IV dengan sinonim agar tidak repetitif, tanpa mengecek Bab I.`
+   - Expected: reject silent synonym substitution; compare against Bab I baseline first.

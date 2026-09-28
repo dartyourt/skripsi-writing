@@ -1,7 +1,7 @@
 ---
 name: skripsi-writing
 description: Audit and revise UNDIP thesis DOCX safely.
-version: 0.3.0
+version: 0.4.0
 author: Julius Tegar, Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
@@ -69,6 +69,12 @@ Sebelum audit atau penulisan, identifikasi:
 - gaya sitasi yang digunakan;
 - bagian yang tidak boleh disentuh, bila ada.
 
+Untuk pekerjaan lintas paragraf, lintas subbab, atau lintas context window, tambahkan:
+
+- DOCX skripsi awal, terutama Bab I, sebagai baseline istilah dan pola penyebutan;
+- daftar istilah acuan: istilah utama, bentuk lengkap–singkatan, nama variabel, nama kelas, nama metode/model, dan padanan bahasa Indonesia;
+- bagian atau paragraf sebelumnya yang menjadi sumber transisi bagi bagian yang akan direvisi.
+
 Jika konteks penting tidak tersedia, lanjutkan hanya pada audit yang dapat dibuktikan dan tandai hal lain `PERLU INFORMASI`. Jangan mengisi kekosongan dengan pengetahuan umum yang tampak masuk akal.
 
 ## Non-Negotiable Rules
@@ -84,6 +90,17 @@ Jika konteks penting tidak tersedia, lanjutkan hanya pada audit yang dapat dibuk
 9. **No raw XML editing.** Gunakan kemampuan DOCX yang sesuai; jangan melakukan substitusi string pada ZIP/XML DOCX secara sembarangan.
 10. **No publication by default.** Jangan commit, push, upload, atau publish dokumen pengguna, PDF referensi, data, atau identitas mahasiswa.
 11. **Uncertainty is a result.** Gunakan `PASS`, `PARTIAL`, `FAIL`, `BELUM TERVERIFIKASI`, atau `PERLU KEPUTUSAN` bila bukti tidak cukup.
+12. **SPOK harus dapat diaudit.** Untuk setiap kalimat utama, identifikasi subjek, predikat, objek/pelengkap, keterangan, hubungan klausa, dan rujukan. Jangan menerima subjek atau rujukan yang hanya dapat ditebak dari konteks.
+13. **Predikat harus lengkap.** Jika predikat menuntut objek atau pelengkap, unsur tersebut harus disebutkan. Jika predikat berupa verba pasif, pastikan pelaku, sasaran, atau fokus proses tidak menjadi kabur.
+14. **Satu kalimat memiliki satu pusat informasi.** Pecah kalimat jika terdapat lebih dari satu gagasan utama, perpindahan subjek tanpa penanda, rantai klausa yang mengaburkan predikat, atau hubungan sebab-akibat yang tidak jelas.
+15. **Utamakan SPOK eksplisit dan verba konkret.** Hapus atau integrasikan keterangan yang hanya mengulang hubungan makna atau menyamarkan pelaku. Ganti verba abstrak atau bergaya mesin dengan verba konkret yang sesuai makna, tetapi pertahankan keterangan yang memuat waktu, tempat, cara, sebab, tujuan, syarat, atau batasan yang diperlukan.
+16. **Kalimat pertama menyatakan fungsi paragraf.** Paragraf harus membuka dengan ide pokok atau klaim yang jelas, bukan konteks yang tidak mengarahkan pembaca.
+17. **Transisi harus berbasis makna.** Kalimat pertama paragraf baru wajib mengambil, mempersempit, menjawab, mengembangkan, membandingkan, atau membatasi unsur yang diperkenalkan pada paragraf sebelumnya. Konjungsi saja tidak cukup.
+18. **Pasangan paragraf wajib diuji dua arah.** Audit harus mencatat `unsur dibawa → fungsi paragraf berikutnya → alasan urutan`. Tandai `PUTUS` jika paragraf berikutnya dapat dipindahkan tanpa mengubah makna hubungan.
+19. **Bab I menjadi baseline lintas sesi.** Jika pekerjaan berlanjut pada context window atau percakapan lain, istilah, definisi, singkatan, nama variabel, nama kelas, nama metode/model, dan pola penyebutan harus dicocokkan dengan DOCX skripsi awal, terutama Bab I.
+20. **Jangan mengganti istilah acuan demi variasi.** Sinonim hanya boleh digunakan jika tidak mengubah konsep, ruang lingkup, tingkat abstraksi, atau makna operasional. Jika berpotensi mengubah identitas konsep, pertahankan istilah Bab I.
+21. **Istilah baru harus ditandai.** Setiap istilah yang tidak ditemukan pada baseline Bab I diberi status `BARU`, alasan penggunaannya dicatat, dan konsistensinya diperiksa sebelum masuk ke naskah.
+22. **Ketidakkonsistenan harus dicatat sebelum diperbaiki.** Catat istilah lama, istilah baru, lokasi keduanya, keputusan yang dipilih, dan risiko makna. Jangan mengganti secara diam-diam.
 
 ## Operating Modes
 
@@ -116,26 +133,49 @@ Gunakan `ai-expert-team` hanya untuk masalah yang benar-benar membutuhkan bebera
 3. Catat sumber aturan: template UNDIP, EYD, arahan pembimbing, PDF, data penelitian.
 4. Tandai informasi yang hilang dan bagian yang tidak boleh diubah.
 5. Buat case record bila pekerjaan lebih dari pemeriksaan satu paragraf.
+6. Jika pekerjaan lintas paragraf atau lintas bab, buat baseline istilah Bab I dan peta kesinambungan paragraf.
 
-**Completion criterion:** scope, sumber, batasan, dan status informasi tercatat sebelum ada perubahan.
+**Completion criterion:** scope, sumber, batasan, status informasi, baseline istilah, dan kebutuhan transisi tercatat sebelum ada perubahan.
+
+### Phase 0A — Build the language and continuity baseline
+
+Untuk pekerjaan yang melibatkan lebih dari satu paragraf atau lebih dari satu bab, buat baseline berikut sebelum mengusulkan revisi:
+
+- **Peta fungsi paragraf:** pembuka, definisi, konteks masalah, penjelasan, bukti, perbandingan, metode, hasil, pembatasan, atau implikasi;
+- **Matriks SPOK:** subjek, predikat, objek/pelengkap, keterangan, hubungan klausa, dan rujukan untuk setiap kalimat utama;
+- **Matriks transisi:** kalimat/konsep penutup paragraf A, unsur yang dibawa, fungsi paragraf B, dan status `NYAMBUNG` atau `PUTUS`;
+- **Kamus istilah Bab I:** bentuk baku, singkatan, kapitalisasi, bentuk tunggal/jamak, padanan bahasa Indonesia, dan lokasi penggunaan pertama;
+- **Daftar invariants:** angka, sitasi, nama metode/model, nama kelas, definisi, batasan, dan klaim yang tidak boleh berubah tanpa proposal terpisah.
+
+Jika DOCX skripsi awal atau Bab I tidak tersedia, status konsistensi lintas bab harus `BELUM TERVERIFIKASI`. Jangan menganggap istilah yang tampak serupa sebagai istilah yang sama.
+
+**Completion criterion:** baseline SPOK, transisi, istilah, dan invariants tersedia atau setiap bagian yang belum tersedia diberi status `BELUM TERVERIFIKASI`.
 
 ### Phase 1 — Inspect baseline
 
-Untuk DOCX, baca body, tabel, header/footer, heading, style yang digunakan, numbering, captions, gambar, field, komentar, dan tracked changes. Periksa package health. Jangan menyimpulkan layout visual hanya dari ekstraksi teks.
+Untuk DOCX, baca body, tabel, header/footer, heading, style yang digunakan, numbering, captions, gambar, field, komentar, dan tracked changes. Untuk pekerjaan lintas sesi, baca Bab I terlebih dahulu dan ekstrak istilah acuan sebelum membaca bagian target. Periksa package health. Jangan menyimpulkan layout visual hanya dari ekstraksi teks.
 
 **Completion criterion:** baseline dapat dibaca ulang dan objek yang akan dibandingkan sudah dihitung/dicatat.
 
 ### Phase 2 — Audit
 
-Audit dalam urutan: (1) bahasa dan EYD, (2) struktur kalimat/paragraf, (3) kesinambungan argumen, (4) sitasi dan sumber, (5) level klaim, (6) struktur/format UNDIP, (7) integritas DOCX. Buat satu temuan untuk satu masalah yang dapat ditindaklanjuti; gabungkan hanya masalah yang memiliki penyebab dan perubahan sama.
+Audit dalam urutan: (1) bahasa dan EYD, (2) SPOK dan struktur klausa, (3) fungsi paragraf, (4) transisi antarparagraf, (5) konsistensi istilah lintas bab/sesi, (6) kesinambungan argumen, (7) sitasi dan sumber, (8) level klaim, (9) struktur/format UNDIP, (10) integritas DOCX. Buat satu temuan untuk satu masalah yang dapat ditindaklanjuti; gabungkan hanya masalah yang memiliki penyebab dan perubahan sama.
 
 Setiap temuan harus mencantumkan ID, level, lokasi, kutipan, kategori, masalah, aturan/bukti, usulan, dampak, dan status. Jangan menulis “perbaiki bahasa” tanpa menjelaskan bagian yang salah dan bentuk perbaikannya.
+
+Untuk temuan SPOK dan alur, audit wajib menyebutkan:
+
+- struktur `S-P-O/Pel-K` aktual dan unsur yang hilang, kabur, atau berganti;
+- pusat informasi kalimat dan alasan kalimat dipertahankan, dipecah, atau disusun ulang;
+- anteseden setiap kata rujukan seperti “ini”, “itu”, “tersebut”, “hal tersebut”, dan “mereka”;
+- konsep yang dibawa dari paragraf sebelumnya, fungsi paragraf berikutnya, dan alasan hubungan tersebut logis;
+- istilah Bab I yang menjadi acuan serta setiap penyimpangan bentuk, singkatan, kapitalisasi, atau makna.
 
 **Completion criterion:** semua temuan yang masuk scope memiliki ID stabil dan status.
 
 ### Phase 3 — Proposal
 
-Buat proposal berdasarkan audit. Untuk perubahan teks, tampilkan teks sebelum, teks usulan, dan alasan. Untuk perubahan format, tampilkan properti yang akan diubah dan properti yang dipertahankan. Pisahkan P1 bahasa, P2 struktur, P3 sumber/klaim, dan P4 format DOCX bila risiko atau approval-nya berbeda.
+Buat proposal berdasarkan audit. Untuk perubahan teks, tampilkan teks sebelum, teks usulan, dan alasan. Untuk perubahan format, tampilkan properti yang akan diubah dan properti yang dipertahankan. Untuk perubahan paragraf, tampilkan juga fungsi paragraf, hubungan transisi sebelum–sesudah, dan istilah acuan Bab I yang dipertahankan. Pisahkan P1 bahasa, P2 struktur, P3 sumber/klaim, dan P4 format DOCX bila risiko atau approval-nya berbeda.
 
 **Completion criterion:** pengguna dapat menyetujui atau menolak setiap perubahan tanpa harus menebak scope.
 
@@ -153,7 +193,7 @@ Gunakan kemampuan `docx` yang tersedia. Kerjakan perubahan kecil, jaga run forma
 
 ### Phase 6 — Verify
 
-Baca ulang output sebagai DOCX. Bandingkan teks target, teks non-target, heading, style, numbering, tabel, gambar, captions, field, komentar, tracked changes, dan package health. Perbarui field/TOC hanya sesuai persetujuan; field mungkin baru dihitung ketika Word/LibreOffice membuka dokumen. Lakukan pemeriksaan visual jika tersedia.
+Baca ulang output sebagai DOCX. Bandingkan teks target, teks non-target, heading, style, numbering, tabel, gambar, captions, field, komentar, tracked changes, dan package health. Ulangi pemeriksaan matriks SPOK, pasangan transisi, kamus istilah Bab I, dan daftar invariants. Perbarui field/TOC hanya sesuai persetujuan; field mungkin baru dihitung ketika Word/LibreOffice membuka dokumen. Lakukan pemeriksaan visual jika tersedia.
 
 **Completion criterion:** verification report berisi verdict per acceptance criterion dan tidak menyembunyikan keterbatasan.
 
@@ -219,12 +259,20 @@ Seluruh aturan panjang, contoh, tabel keputusan, dan format artefak berada di `r
 ## Verification Checklist
 
 - [ ] Mode, scope, input, dan batasan tercatat.
+- [ ] Baseline Bab I tersedia atau status `BELUM TERVERIFIKASI` dinyatakan.
 - [ ] Audit selesai sebelum edit.
 - [ ] Setiap perubahan mempunyai ID audit dan proposal.
 - [ ] Approval eksplisit tercatat per item.
 - [ ] DOCX sumber tidak tertimpa.
 - [ ] Output hanya mengubah scope yang disetujui.
 - [ ] EYD dan struktur kalimat diperiksa.
+- [ ] Setiap kalimat utama memiliki subjek dan predikat yang jelas.
+- [ ] Objek/pelengkap diperiksa sesuai tuntutan predikat.
+- [ ] Kata rujukan memiliki anteseden yang jelas.
+- [ ] Setiap pasangan paragraf memiliki unsur yang dibawa dan fungsi lanjutan yang dapat dijelaskan.
+- [ ] Kalimat pertama paragraf baru tersambung secara makna, bukan hanya memakai konjungsi.
+- [ ] Istilah, singkatan, nama model, nama kelas, dan definisi konsisten dengan Bab I.
+- [ ] Istilah baru ditandai `BARU` dan tidak masuk diam-diam.
 - [ ] Sitasi ditelusuri ke PDF atau ditandai belum terverifikasi.
 - [ ] Klaim Bab IV–V sesuai bukti dan batas desain.
 - [ ] Aturan UNDIP diperiksa.
