@@ -17,6 +17,7 @@ Gunakan referensi ini untuk menulis dan mengaudit teks skripsi. Aturannya mempri
 
 - Satu paragraf memiliki satu ide pokok yang dapat ditulis dalam satu kalimat.
 - Paragraf deduktif menempatkan kalimat utama di awal.
+- **Kalimat utama harus cukup kuat untuk menaungi seluruh kalimat berikutnya sebagai anak-anak paragraf.** Kalimat pembuka tidak boleh hanya menjadi jembatan dari paragraf sebelumnya; unsur transisi yang diambil harus langsung terhubung dengan gagasan utama paragraf baru.
 - Kalimat berikutnya menjelaskan, memberi alasan, menunjukkan bukti, memberi contoh, atau membatasi kalimat utama.
 - Jangan memasukkan gagasan baru yang tidak mendukung ide pokok.
 - Jika ide baru membutuhkan penjelasan mandiri, buat paragraf atau subbab baru.
@@ -29,9 +30,9 @@ Empat sampai lima kalimat adalah panduan kerja untuk paragraf penjelasan, bukan 
 
 Sebelum menulis paragraf berikutnya, nyatakan hubungannya: lanjutan, sebab-akibat, perbandingan, contoh, pembatasan, metode, hasil, atau implikasi. Gunakan konjungsi hanya bila hubungan tersebut memang ada. Periksa apakah pembaca memahami mengapa topik berpindah.
 
-Gunakan uji `unsur dibawa → fungsi berikutnya → alasan urutan` untuk setiap pasangan paragraf. Kalimat terakhir paragraf sebelumnya harus meninggalkan konsep, masalah, temuan, pertanyaan, atau batasan yang dapat diambil oleh kalimat pertama paragraf berikutnya. Kalimat pertama paragraf berikutnya harus mengambil, mempersempit, menjawab, mengembangkan, membandingkan, atau membatasi unsur tersebut. Jika paragraf baru tetap dapat dipindahkan ke lokasi lain tanpa mengubah makna, tandai transisi sebagai `PUTUS`.
+Gunakan uji `unsur dibawa → ide pokok paragraf baru → fungsi berikutnya → alasan urutan` untuk setiap pasangan paragraf. Kalimat terakhir paragraf sebelumnya harus meninggalkan istilah, konsep, objek, proses, hasil, pertanyaan, atau batasan yang dapat diambil oleh kalimat pertama paragraf berikutnya. Kalimat pertama paragraf berikutnya harus mengambil unsur tersebut secara terlihat, misalnya sebagai subjek, objek, atau fokus pembahasan, lalu menghubungkannya langsung dengan ide pokok paragraf baru. Pengambilan unsur lama tidak boleh membuat kalimat pertama hanya menjadi jembatan kosong; kalimat tersebut tetap harus cukup kuat untuk menaungi seluruh kalimat berikutnya. Bentuk pengambilan kembali dapat berupa pengulangan istilah, kata tunjuk dengan anteseden tunggal, atau pengembangan langsung dari objek/proses sebelumnya. Contoh: “...diproses oleh lapisan berikutnya” → “Lapisan berikutnya terdiri atas ...”; “...digabungkan dengan jalur pintas” → “Jalur pintas tersebut ...”.
 
-Jangan menganggap kata “selanjutnya”, “berdasarkan hal tersebut”, “oleh karena itu”, atau “selain itu” sebagai transisi yang cukup. Konjungsi hanya menamai hubungan; isi kalimat harus menunjukkan hubungan tersebut.
+Jangan menganggap kata “selanjutnya”, “berdasarkan hal tersebut”, “oleh karena itu”, atau “selain itu” sebagai transisi yang cukup. Konjungsi hanya menamai hubungan; isi kalimat harus menunjukkan hubungan tersebut. Jangan menghapus pengulangan istilah yang diperlukan hanya demi variasi. Jika paragraf baru tidak mengambil unsur dari paragraf sebelumnya dan dapat dipindahkan tanpa mengubah hubungan makna, tandai transisi sebagai `PUTUS`.
 
 ## 5. Struktur kalimat dan pemeriksaan SPOK
 
@@ -57,7 +58,7 @@ Jika istilah baru diperlukan, tandai `BARU`, jelaskan alasan penggunaannya, lalu
 
 ## 7. Kejelasan konsep Informatika
 
-Gunakan urutan yang sesuai kebutuhan: konsep umum → masalah umum → konteks masalah khusus → proses/komponen → istilah teknis → keterbatasan pendekatan yang ada → alasan pendekatan penelitian. Untuk pendahuluan, gunakan bentuk piramida dari umum ke khusus: pentingnya topik, masalah umum, masalah khusus, pendekatan yang sudah ada, keterbatasan atau gap, lalu tujuan/solusi penelitian.
+Gunakan urutan yang sesuai kebutuhan: konsep umum → konteks masalah → proses/komponen → istilah teknis → alasan pentingnya konsep → batasan. Untuk pendahuluan, gunakan bentuk piramida dari umum ke khusus: pentingnya topik, masalah umum, masalah khusus, pendekatan yang sudah ada, keterbatasan atau gap, lalu tujuan/solusi penelitian. Dalam konteks penelitian, pertajam urutan itu dengan menjelaskan masalah umum, konteks masalah khusus, komponen/proses yang relevan, keterbatasan pendekatan terdahulu, lalu alasan pendekatan penelitian. Jangan memperkenalkan banyak singkatan sebelum kepanjangannya. Konsistenkan istilah yang sama di seluruh dokumen.
 
 Sebelum membahas model atau metode, jelaskan fungsi objek yang diproses dan kapan informasi tersebut digunakan. Untuk istilah teknis, jawab secara berurutan: apa objeknya, kapan digunakan, informasi apa yang diberikan, dan bagaimana informasi tersebut dipakai dalam penelitian. Jangan menyamakan label teknis dengan fenomena yang lebih luas jika maknanya lebih terbatas.
 
@@ -88,7 +89,8 @@ Saat merevisi, jelaskan perubahan; jangan mengklaim versi baru lebih benar secar
 - Tidak ada kata mubazir atau pengulangan.
 - Istilah teknis konsisten.
 - Kalimat tidak menjadi lebih kuat daripada bukti.
-- Transisi antarparagraf dapat dijelaskan dengan format `unsur dibawa → fungsi berikutnya → alasan urutan`.
-- Kalimat terakhir paragraf sebelumnya dan kalimat pertama paragraf berikutnya tersambung secara makna.
+- Transisi antarparagraf dapat dijelaskan dengan format `unsur dibawa → bentuk pengambilan kembali → ide pokok paragraf baru → fungsi unsur pengait → alasan urutan`.
+- Kalimat pertama paragraf baru mengambil unsur sebelumnya secara terlihat dan tetap menjadi kalimat utama yang menaungi paragraf.
+- Kalimat terakhir paragraf sebelumnya dan kalimat pertama paragraf berikutnya tersambung secara makna; konjungsi saja tidak cukup.
 - Istilah yang berbeda dari Bab I ditandai dan dijelaskan.
 - Perubahan tidak menghapus sitasi, batasan, angka, kondisi, atau istilah penting.

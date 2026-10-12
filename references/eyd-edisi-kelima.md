@@ -50,6 +50,41 @@ SPOK digunakan sebagai alat pemeriksaan ketat, bukan aturan bahwa semua kalimat 
 
 Kalimat dinyatakan `LULUS` jika subjek dan predikat utama jelas, unsur wajib predikat hadir, hubungan klausa terbaca, dan tidak ada rujukan ambigu. Kalimat dapat dinyatakan `LULUS DENGAN CATATAN` jika strukturnya sah tetapi memerlukan pengetahuan teknis yang sudah dijelaskan. Kalimat dinyatakan `PERLU REVISI` jika pembaca harus menebak subjek, predikat, objek/pelengkap, atau hubungan antarklausa.
 
+## Protokol SPOK Tambahan untuk Skripsi Informatika
+
+Gunakan pemeriksaan berikut ketika pengguna meminta kalimat yang sangat eksplisit dan mudah dibaca:
+
+1. **Tentukan satu gagasan utama.** Satu kalimat harus menyampaikan satu hubungan utama. Jika kalimat memuat dua tindakan yang memiliki tujuan berbeda, pecah kalimat tersebut.
+2. **Letakkan subjek secara jelas.** Sebutkan pelaku atau pokok pembicaraan secara langsung. Hindari subjek nominal yang terlalu panjang, seperti `Pembagian penilaian kejelasan sinyal dan penentuan arah polaritas tersebut`, jika istilah inti dapat menjadi subjek yang lebih ringkas.
+3. **Gunakan predikat yang konkret.** Utamakan verba seperti `menentukan`, `membandingkan`, `memproses`, `menghasilkan`, `menggunakan`, dan `memengaruhi`. Hindari predikat abstrak seperti `menjadi alasan`, `memberikan wawasan`, atau `memiliki peran` jika tindakan yang dimaksud dapat disebutkan langsung.
+4. **Lengkapi verba transitif.** Verba `menentukan`, `membandingkan`, `menggunakan`, `mempelajari`, dan `menghasilkan` harus diikuti objek atau pelengkap yang jelas.
+5. **Jelaskan hubungan antarklausa.** Gunakan `karena` untuk alasan, `sehingga` untuk akibat, `agar` untuk tujuan, `sedangkan` untuk perbandingan, dan `namun` untuk pertentangan. Jangan memakai konjungsi hanya untuk menghubungkan kalimat yang terdengar ilmiah.
+6. **Hindari pembuka kosong.** Jangan memulai kalimat dengan `Dengan cara tersebut`, `Hal ini`, atau `Pembagian tersebut` jika rujukannya tidak langsung dan pembaca harus menebak maksudnya. Ganti dengan subjek yang spesifik, misalnya `Pendekatan hierarchical membagi ...` atau `Model menentukan ...`.
+7. **Batasi rujukan kata.** Gunakan `tersebut`, `ini`, atau `kondisi tersebut` hanya jika rujukannya menunjuk pada satu unsur yang jelas.
+8. **Pilih bentuk aktif atau pasif berdasarkan fokus.** Gunakan bentuk aktif ketika penulis ingin menonjolkan pelaku, seperti `Penelitian ini membandingkan ...`. Gunakan bentuk pasif ketika objek atau proses menjadi fokus, seperti `Data diuji menggunakan ...`.
+9. **Uji keterbacaan.** Setelah menandai S-P-O/K, baca kalimat tanpa sitasi dan istilah teknis. Jika hubungan pokoknya tetap tidak jelas, rombak kalimat sebelum menambahkan sitasi atau keterangan tambahan.
+10. **Audit akhir.** Tandai subjek, predikat, objek/pelengkap, keterangan, hubungan antarklausa, rujukan, dan makna. Kalimat berstatus `LULUS` jika pembaca tidak perlu menebak siapa melakukan apa, terhadap apa, dan dalam kondisi apa.
+
+### Contoh
+
+> Pembagian tersebut memungkinkan model memusatkan perhatian pada satu jenis keputusan pada setiap tahap.
+
+Lebih jelas:
+
+> Pendekatan hierarchical membagi proses klasifikasi menjadi beberapa tahap.
+
+> Dengan cara tersebut, keputusan awal dapat membantu mengarahkan keputusan berikutnya.
+
+Lebih jelas:
+
+> Model menggunakan keputusan awal untuk menentukan keputusan pada tahap berikutnya.
+
+> Keunggulan pendekatan hierarchical belum dapat diasumsikan, sehingga penelitian ini membandingkan pendekatan tersebut dengan pendekatan non-hierarchical.
+
+Lebih jelas:
+
+> Penelitian ini membandingkan kinerja pendekatan hierarchical dan non-hierarchical karena belum diketahui pendekatan mana yang memiliki kinerja lebih baik.
+
 ## Example
 
 Kurang jelas:
